@@ -1,38 +1,39 @@
-.App {
-  text-align: center;
+.bg-color{
+    background-color: #333333;
+}
+.text-nav a, button, li, input{
+    color: white
+}
+body{
+    background-color: #333333;
+    color: white;
+}
+.img-zoom{
+    transition: transform 0.5s;
+}
+.img-zoom:hover{
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.07); 
+}
+.card {
+    overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.button-send{
+    font-weight: bolder;
+}
+.button-send:hover{
+    background-color: rgba(153, 87, 87, 0.041);
+}
+.footer-pizza{
+    margin: 0 !important;
+}
+h6{
+    color: #ffc720
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar-toggler{
+    /* color: white !important; */
+    border: rgba(59, 54, 54, 0.226) !important;
 }
