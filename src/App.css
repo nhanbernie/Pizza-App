@@ -37,3 +37,12 @@ h6{
     /* color: white !important; */
     border: rgba(59, 54, 54, 0.226) !important;
 }
+
+.footer-pizza{
+    padding: 0px !important;
+    margin: 0px !important;
+}
+.icon-shopping:hover{
+    color: black !important;
+    transition: all 0.3s ease-in;
+}

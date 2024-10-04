@@ -1,14 +1,13 @@
 import React from 'react';
-import pizza5 from '../assets/images/pizza5.jpg'
-import pizza4 from '../assets/images/pizza4.jpg'
-import pizza3 from '../assets/images/pizza3.jpg'
-import pizza2 from '../assets/images/pizza2.jpg'
-import pizza1 from '../assets/images/pizza1.jpg'
-
+import pizza5 from '../assets/images/pizza5.jpg';
+import pizza4 from '../assets/images/pizza4.jpg';
+import pizza3 from '../assets/images/pizza3.jpg';
+import pizza2 from '../assets/images/pizza2.jpg';
+import pizza1 from '../assets/images/pizza1.jpg';
 
 const Carousel = () => {
     return (
-        <div id="carouselExampleCaptions" className="carousel slide">
+        <>
             <div className="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
@@ -36,7 +35,6 @@ const Carousel = () => {
                         <p>Best Service.</p>
                     </div>
                 </div>
-                
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -46,7 +44,7 @@ const Carousel = () => {
                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
                 <span className="visually-hidden">Next</span>
             </button>
-        </div>
+        </>
     );
 };
 
