@@ -1,23 +1,19 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import PopUpBuy from './PopUpBuy';
-import { fetchProductsRequest } from '../../../store/actions/productActions';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHome } from '../../../hooks/useHome'; // Import useHome để sử dụng trong MenuSection
+import { fetchProductsRequest } from '../../../store/actions/productActions'; // Import action lấy sản phẩm từ API
 
 function MenuSection() {
   const dispatch = useDispatch();
-  const { products, loading, error } = useSelector((state) => state.product);
-  const [modalShow, setModalShow] = React.useState(false);
-  const [selectedProduct, setSelectedProduct] = React.useState(null);
+  const { products, loading, error } = useSelector((state) => state.product); // Lấy products từ Redux store
+  const { handleBuy, modalShow, handleChoose, setModalShow, product } = useHome(); // Lấy các hàm từ useHome
 
+  // Gọi action để lấy danh sách sản phẩm từ API khi component được mount
   useEffect(() => {
     dispatch(fetchProductsRequest());
   }, [dispatch]);
-
-  const handleBuy = (product) => {
-    setSelectedProduct(product);
-    setModalShow(true);
-  };
 
   if (loading) {
     return <p>Loading...</p>;
@@ -27,7 +23,6 @@ function MenuSection() {
     return <p>Error: {error}</p>;
   }
 
-  // Kiểm tra nếu products là một mảng trước khi map
   return (
     <>
       <section>
@@ -37,7 +32,7 @@ function MenuSection() {
           </div>
           <div className="container mt-5">
             <div className="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-center">
-              {/* Chỉ map nếu products là mảng */}
+              {/* Hiển thị danh sách sản phẩm */}
               {Array.isArray(products) && products.length > 0 ? (
                 products.map((product) => (
                   <div key={product.id} className="col mb-5 d-flex justify-content-center">
@@ -58,7 +53,7 @@ function MenuSection() {
                           <span>${product.price}</span>
                         )}
                         <div className="mt-2">
-                          <Button variant="dark" onClick={() => handleBuy(product)} style={{ minWidth: '100%' }}>
+                          <Button variant="dark" onClick={() => handleBuy(product.title, product.salePrice || product.price)} style={{ minWidth: '100%' }}>
                             Buy
                           </Button>
                         </div>
@@ -67,18 +62,18 @@ function MenuSection() {
                   </div>
                 ))
               ) : (
-                <p>No products available.</p> // Thêm fallback nếu không có sản phẩm nào
+                <p>No products available.</p>
               )}
             </div>
           </div>
         </div>
 
-        {/* Modal */}
+        {/* Modal hiển thị khi người dùng nhấn nút mua */}
         <PopUpBuy
-          show={modalShow}
-          onChoose={() => setModalShow(false)}
-          onHide={() => setModalShow(false)}
-          product={selectedProduct}
+          show={modalShow.show}
+          onChoose={handleChoose}
+          onHide={() => setModalShow({ show: false, product: null })}
+          product={product}
         />
       </section>
     </>
