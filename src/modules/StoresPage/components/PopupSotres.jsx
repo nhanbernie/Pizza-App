@@ -4,10 +4,10 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Modal from 'react-bootstrap/Modal';
 import Row from 'react-bootstrap/Row';
-import { useHome } from '../hooks/useHome';
+import { useHome } from '../../../hooks/useHome';
 
 function PopupSotres({ show, onHide }) {
-  const { items, handleIncrease, handleDecrease } = useHome(); // Lấy danh sách items và hàm từ context
+  const { items, handleIncrease, handleDecrease } = useHome(); 
 
   return (
     <Modal show={show} style={{ color: 'black' }} onHide={onHide} aria-labelledby="contained-modal-title-vcenter">
@@ -17,7 +17,7 @@ function PopupSotres({ show, onHide }) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="grid-example">
-        <Container>
+        <Container className='popup-shop_container'>
           {Object.keys(items).length === 0 ? (
             <Row>
               <Col xs={12}>
@@ -33,14 +33,15 @@ function PopupSotres({ show, onHide }) {
                 <Col xs={2}>
                   {items[key].quantity} {/* Số lượng sản phẩm */}
                 </Col>
-                <Col xs={2}>
-                  <Button variant="outline-primary" onClick={() => handleIncrease(key)}>+</Button>
-                </Col>
+
                 <Col xs={2}>
                   <Button variant="outline-danger" onClick={() => handleDecrease(key)}>-</Button>
                 </Col>
-                <Col xs={3}>
-                  {(items[key].price * items[key].quantity).toFixed(2)}$ {/* Tổng giá */}
+                <Col xs={2}>
+                  <Button variant="outline-primary" onClick={() => handleIncrease(key)}>+</Button>
+                </Col>
+                <Col xs={12}>
+                  {(items[key].price * items[key].quantity).toFixed(2)}$ 
                 </Col>
               </Row>
             ))

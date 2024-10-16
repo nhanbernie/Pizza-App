@@ -1,0 +1,115 @@
+.header-login .modal-body {
+    display: flex;
+    padding-top: 30px !important;
+
+}
+
+.modal-body {
+    padding-bottom: 40px !important;
+}
+
+.btn-close {
+    margin: 0px !important;
+}
+
+
+.modal-content {
+    border-radius: 60px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.modal-body h4 {
+    text-align: center;
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    margin-bottom: 40px;
+    height: 90px;
+    font-size: 50px;
+    font-weight: 800;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all 0.3s ease;
+}
+
+.modal-body h4:hover {
+    font-size: 53px;
+    letter-spacing: 1px;
+    color: transparent;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.modal-fancy-enter {
+    opacity: 0;
+    transform: scale(0.7) translateY(100px);
+    filter: blur(10px);
+}
+
+.modal-fancy-enter-active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+    transition: all 600ms ease;
+}
+
+.modal-fancy-exit {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+}
+
+.modal-fancy-exit-active {
+    opacity: 0;
+    transform: scale(0.7) translateY(100px);
+    filter: blur(10px);
+    transition: all 600ms ease;
+}
+.modal-dialog {
+    width: 600px;
+
+}
+.modal-content {
+    padding: 0px 40px 0px 40px !important;
+}
+
+.container-popup-signin
+.form-control {
+    border-radius: 20px;
+    height: 60px !important;
+    color: black;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.container-popup-signin
+.form-control:hover {
+    border: 1px solid #ffcfc3;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.container-popup-signin
+.form-control:focus {
+    border: 3px solid #fac3b5;
+    background-color: none;
+    box-shadow: none !important;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.container-popup-signin
+.form-control:focus {
+
+}
+
+.container-popup-signin 
+.btn-primary {
+    width: 200px;
+    border-radius: 20px;
+    height: 50px;
+    background-color: #ff9378;
+    border: none;
+}
+.container-popup-signin 
+.btn-primary:hover {
+    background-color: #fc6c48;
+}

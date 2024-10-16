@@ -1,15 +1,18 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../src/App.css'
-import AuthLayout from './shares/AuthLayout';
+import AuthLayout from './shares/layout/AuthLayout';
 import { HomeProvider } from './hooks/useHome';
-
+import { Provider } from 'react-redux';
+import store from './store';
 
 function App() {
   return (
     <div className="App">
-      <HomeProvider>
-        <AuthLayout />
-      </HomeProvider>
+      <Provider store={store}>
+        <HomeProvider>
+          <AuthLayout />
+        </HomeProvider>
+      </Provider>
     </div>
   );
 }

@@ -1,0 +1,33 @@
+.number {
+    position: absolute;
+    top: 10px;
+    left: 60%;
+}
+
+.form-control:hover {
+    cursor: pointer;
+    /* box-shadow: inset 500px 0 0 0 #1616162f; */
+    color: white;
+    
+}
+
+.navbar-brand {
+    color: white !important;
+    padding-left: 30px;
+}
+a.navbar-brand:active {
+    color: white;
+}
+
+.menu-header .collapse{
+    padding-left: 30px !important;
+}
+.user-icon {
+    padding: 0px 40px 0px 40px;
+}
+.user-icon i {
+    font-size: 25px;
+}
+.fa-user:hover {
+    cursor: pointer;
+}

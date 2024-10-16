@@ -1,9 +1,7 @@
 import React from 'react';
-import pizza5 from '../assets/images/pizza5.jpg';
-import pizza4 from '../assets/images/pizza4.jpg';
-import pizza3 from '../assets/images/pizza3.jpg';
-import pizza2 from '../assets/images/pizza2.jpg';
-import pizza1 from '../assets/images/pizza1.jpg';
+import pizza5 from '../../../assets/images/pizza5.jpg';
+import pizza3 from '../../../assets/images/pizza3.jpg';
+import pizza2 from '../../../assets/images/pizza2.jpg';  
 
 const Carousel = () => {
     return (

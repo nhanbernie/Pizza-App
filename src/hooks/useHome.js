@@ -8,19 +8,15 @@ export const HomeProvider = ({ children }) => {
   const [product, setProduct] = useState(null);
   const [modalShowStores, setModalShowStores] = useState(false);
   const [items, setItems] = useState({
-    // name: '',
-    // price: 0
   })
 
 
   const handleBuy = (product, price) => {
     setModalShow({ show: true });
     setProduct(product);
-  
-    // Kiểm tra nếu sản phẩm đã tồn tại trong giỏ hàng thì tăng số lượng
+
     setItems(prevItems => {
       if (prevItems[product]) {
-        // Nếu sản phẩm đã có, tăng số lượng lên
         return {
           ...prevItems,
           [product]: {
@@ -29,7 +25,6 @@ export const HomeProvider = ({ children }) => {
           }
         };
       } else {
-        // Nếu sản phẩm chưa có, thêm mới với quantity = 1
         return {
           ...prevItems,
           [product]: {
@@ -65,8 +60,8 @@ export const HomeProvider = ({ children }) => {
         };
       } else {
         const newItems = { ...prevItems };
-        delete newItems[product]; // Nếu số lượng là 1 và người dùng giảm, xóa sản phẩm khỏi giỏ hàng
-        setCount(prevCount => prevCount - 1); // Giảm số lượng sản phẩm khác nhau trong giỏ hàng
+        delete newItems[product]; 
+        setCount(prevCount => prevCount - 1); 
         return newItems;
       }
     });
