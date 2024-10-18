@@ -9,8 +9,7 @@ function fetchProductsApi() {
 function* fetchProductsSaga() {
   try {
     const response = yield call(fetchProductsApi);
-    // Kiểm tra và chỉ lấy data từ response
-    yield put(fetchProductsSuccess(response.data.data)); // Truy cập đúng vào thuộc tính data
+    yield put(fetchProductsSuccess(response.data.data)); 
   } catch (error) {
     yield put(fetchProductsFailure(error.message));
   }

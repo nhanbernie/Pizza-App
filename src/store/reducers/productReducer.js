@@ -1,7 +1,5 @@
-// productReducer.js
-
 const initialState = {
-    products: [],  // Đảm bảo products là mảng rỗng mặc định
+    products: [],
     loading: false,
     error: null,
   };
@@ -17,7 +15,7 @@ const initialState = {
         return {
           ...state,
           loading: false,
-          products: action.payload,  // Gán danh sách sản phẩm vào state
+          products: action.payload, 
         };
       case 'FETCH_PRODUCTS_FAILURE':
         return {
@@ -31,4 +29,3 @@ const initialState = {
   };
   
   export default productReducer;
-  

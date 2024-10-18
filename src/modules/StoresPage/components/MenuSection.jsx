@@ -2,15 +2,14 @@ import React, { useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import PopUpBuy from './PopUpBuy';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHome } from '../../../hooks/useHome'; // Import useHome để sử dụng trong MenuSection
-import { fetchProductsRequest } from '../../../store/actions/productActions'; // Import action lấy sản phẩm từ API
+import { useHome } from '../../../hooks/useHome'; 
+import { fetchProductsRequest } from '../../../store/actions/productActions'; 
 
 function MenuSection() {
   const dispatch = useDispatch();
-  const { products, loading, error } = useSelector((state) => state.product); // Lấy products từ Redux store
-  const { handleBuy, modalShow, handleChoose, setModalShow, product } = useHome(); // Lấy các hàm từ useHome
+  const { products, loading, error } = useSelector((state) => state.product); 
+  const { handleBuy, modalShow, handleChoose, setModalShow, product } = useHome();
 
-  // Gọi action để lấy danh sách sản phẩm từ API khi component được mount
   useEffect(() => {
     dispatch(fetchProductsRequest());
   }, [dispatch]);
